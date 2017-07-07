@@ -12,6 +12,8 @@ import Firebase
 import FirebaseDatabase
 
 
+// Signup
+
 class SignUpVC : UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     
