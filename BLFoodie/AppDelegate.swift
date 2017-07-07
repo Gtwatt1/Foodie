@@ -1,12 +1,16 @@
 //
 //  AppDelegate.swift
-//  BLFoodie
+//  Foodie
 //
-//  Created by Zone 3 on 7/7/17.
+//  Created by Zone 3 on 6/16/17.
 //  Copyright © 2017 Zone 3. All rights reserved.
 //
 
 import UIKit
+import Firebase
+import GoogleMaps
+
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
+        GMSServices.provideAPIKey("AIzaSyBTuQ4lF_sM2hFgnJw17kVBMUWJjbkSGsw")
+
+        UITabBar.appearance().barTintColor = Utilities.getColorWithHexString("#414648")
+        UITabBar.appearance().tintColor = Utilities.getColorWithHexString("#f06292")
+        UINavigationBar.appearance().barTintColor = Utilities.getColorWithHexString("#414648")
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : Utilities.getColorWithHexString("#f06292")]
+        UINavigationBar.appearance().tintColor = Utilities.getColorWithHexString("#f06292")
+        UINavigationBar.appearance().isTranslucent = true
+
+
+        
+//        navigationController?.navigationBar.barTintColor r=
+
+        
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        window?.rootViewController = OnBoardingVC()//UINavigationController(rootViewController: OrderHistoryVC(collectionViewLayout :UICollectionViewFlowLayout()))
         return true
     }
 
@@ -39,8 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        // Saves changes in the application's managed object context before the application terminates.
     }
 
-
+   
 }
 
