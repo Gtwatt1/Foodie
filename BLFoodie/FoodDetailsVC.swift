@@ -146,7 +146,7 @@ class FoodDetailsVC : UIViewController {
         label.text = "1"
         label.font = UIFont.systemFont(ofSize: 16)
         label.textAlignment = .center
-        label.textColor = Utilities.getColorWithHexString("#414648")
+        label.textColor = .white //Utilities.getColorWithHexString("#414648")
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -189,7 +189,7 @@ class FoodDetailsVC : UIViewController {
         
         if !orderSet{
             //    CART.append(Order(food: food!,quan: Int(quantityLabel.text!)!).toJsonString() )
-            orderButton.backgroundColor = Utilities.getColorWithHexString("#414648")
+            orderButton.backgroundColor = .lightGray //Utilities.getColorWithHexString("#414648")
             Toast.init(text: "\(String(describing: quantityLabel.text!)) \(foodName.text!)(s) Added to Cart").show()
         }else{
             //    CART.dropLast()

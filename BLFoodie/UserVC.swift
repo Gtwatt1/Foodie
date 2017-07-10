@@ -17,6 +17,9 @@ class UserVC: UIViewController {
         navigationItem.title = "Profile"
         let navbar = UIBarButtonItem(image: UIImage(named:"edit"), style: .plain, target: self, action: #selector(handleProfileEdit))
         navigationItem.rightBarButtonItem = navbar
+        navigationController?.navigationBar.isHidden = false
+        navigationItem.setHidesBackButton(true, animated: false)
+
 //        view.backgroundColor = UIColor(white: 0.95, alpha: 1)
         setupViews()
     }
@@ -64,13 +67,14 @@ class UserVC: UIViewController {
         return v
     }()
     
-//    let namePic : UIImageView = {
-//        let iv = UIImageView()
-//        iv.translatesAutoresizingMaskIntoConstraints = false
-//        iv.image = UIImage(named: "name")
-//        return iv
-//    }()
-//    
+    let bannerPic : UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.image = UIImage(named: "italian")
+        iv.contentMode = .scaleAspectFill
+        return iv
+    }()
+//
 //    let emailPic : UIImageView = {
 //        let iv = UIImageView()
 //        iv.translatesAutoresizingMaskIntoConstraints = false
@@ -201,7 +205,7 @@ class UserVC: UIViewController {
         view.addSubview(favoriteContainer)
         view.addSubview(favoriteLabel)
         view.addSubview(favoriteDescription)
-//        view.addSubview(namePic)
+        view.addSubview(bannerPic)
 //        view.addSubview(emailPic)
 //        view.addSubview(addressPic)
 
@@ -221,10 +225,10 @@ class UserVC: UIViewController {
         nameLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive  = true
         nameLabel.heightAnchor.constraint(equalToConstant: 16).isActive  = true
         
-//        namePic.centerYAnchor.constraint(equalTo: nameContainer.centerYAnchor).isActive  = true
-//        namePic.widthAnchor.constraint(equalToConstant: 24).isActive  = true
-//        namePic.leftAnchor.constraint(equalTo: nameContainer.leftAnchor, constant:12).isActive  = true
-//        namePic.heightAnchor.constraint(equalToConstant: 20).isActive  = true
+        bannerPic.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant : -40).isActive  = true
+        bannerPic.rightAnchor.constraint(equalTo: view.rightAnchor).isActive  = true
+        bannerPic.leftAnchor.constraint(equalTo: view.leftAnchor).isActive  = true
+        bannerPic.heightAnchor.constraint(equalToConstant: 72).isActive  = true
         
         emailLabel.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant : 4).isActive  = true
         emailLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive  = true

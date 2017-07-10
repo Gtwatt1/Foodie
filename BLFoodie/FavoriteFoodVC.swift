@@ -96,7 +96,7 @@ class FavoriteFoodCell : UICollectionViewCell{
         iv.image = UIImage(named: "images-30")
         iv.contentMode = .scaleAspectFill
         iv.layer.masksToBounds = true
-        iv.backgroundColor = .orange
+        iv.backgroundColor = .darkGray
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()

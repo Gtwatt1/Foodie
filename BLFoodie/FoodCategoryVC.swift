@@ -43,7 +43,7 @@ class FoodCategoryVC: UICollectionViewController, UICollectionViewDelegateFlowLa
         
         
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 4
+        layout.minimumLineSpacing = 12
         layout.minimumInteritemSpacing = 0
         collectionView?.contentInset = UIEdgeInsets(top: 8, left: 8, bottom: 4, right: 8)
         collectionView?.collectionViewLayout = layout
@@ -114,6 +114,7 @@ class FoodCatCell : UICollectionViewCell{
         super.init(frame: frame)
         setupViews()
         backgroundColor = Utilities.getColorWithHexString("#414648")
+        layer.cornerRadius = 20
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -122,11 +123,11 @@ class FoodCatCell : UICollectionViewCell{
     
     let foodImage : UIImageView = {
         let iv = UIImageView()
-        iv.layer.cornerRadius = 9
+        iv.layer.cornerRadius = 12
         iv.image = UIImage(named: "images-30")
         iv.contentMode = .scaleAspectFill
         iv.layer.masksToBounds = true
-        iv.backgroundColor = .orange
+        iv.backgroundColor = .darkGray
         iv.translatesAutoresizingMaskIntoConstraints = false
         return iv
     }()
@@ -236,7 +237,8 @@ class Header : UICollectionViewCell, UICollectionViewDataSource, UICollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "appcell", for: indexPath) as! BannerCell
         let url = URL(string:  banners[indexPath.row])
-        cell.appImage.kf.setImage(with:url)
+        let image = UIImage(named: "images-30")
+        cell.appImage.kf.setImage(with:url, placeholder: image)
         return cell
     }
     
@@ -281,7 +283,7 @@ class Header : UICollectionViewCell, UICollectionViewDataSource, UICollectionVie
             iv.layer.cornerRadius = 18
             iv.contentMode = .scaleAspectFill
             iv.layer.masksToBounds = true
-            iv.backgroundColor = .orange
+            iv.backgroundColor = .darkGray
             iv.translatesAutoresizingMaskIntoConstraints = false
             return iv
         }()

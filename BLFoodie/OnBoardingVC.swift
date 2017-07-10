@@ -13,7 +13,7 @@ class OnBoardingVC : UIViewController, UICollectionViewDelegateFlowLayout,UIColl
     let onBoardingCell = "onboardingcell"
     
     var onBoardingPages : [OnBoardingPage] = {
-        let firstPage = OnBoardingPage(imgName: "ogbono", message: "Shopping for food has never been easier with our friendly App")
+        let firstPage = OnBoardingPage(imgName: "images-30", message: "Shopping for food has never been easier with our friendly App")
         let secondPage = OnBoardingPage(imgName: "soyabeansmilk", message: "Shopping for food has never been easier with our friendly App")
         let thirdPage = OnBoardingPage(imgName: "coconutcandy", message: "Shopping for food has never been easier with our friendly App")
         let fourthPage = OnBoardingPage(imgName: "JollofRice", message: "Shopping for food has never been easier with our friendly App")
